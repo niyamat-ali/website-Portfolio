@@ -1,0 +1,595 @@
+* {
+    background-color: #000000;
+}
+
+#incline-text {
+    color: #f8f9fa;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000; /* Dark background for the navbar */
+    position: fixed;
+    top: -100px; /* Start with the navbar hidden above the viewport */
+    width: 100%;
+    transition: top 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.nav-bar.visible {
+    top: 0; /* Show the navbar at the top of the viewport */
+}
+
+.nav-bar .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar ul li {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.nav-bar ul li a {
+    color: #ffffff; /* Link color */
+    text-decoration: none;
+    position: relative; /* Needed for positioning the underline */
+    overflow: hidden; /* Ensure underline does not overflow */
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffc107; /* Yellow underline color */
+    transform: scaleX(0); /* Hide underline initially */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.nav-bar ul li a:hover::after,
+.nav-bar ul li a.active::after {
+    transform: scaleX(1); /* Show underline on hover and when active */
+}
+
+/* home page css code */
+#home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+#home-page .text-container {
+    animation: fadeIn 2s ease-in-out;
+    margin-right: 20px; /* Space between text and video */
+    max-width: 50%; /* Ensures the text takes up less space */
+}
+
+#home-page .image-video {
+    max-width: 50%; 
+    margin-top: 5%;
+    margin-right: 6%;/* Ensures the video takes up less space */
+}
+
+#home-page .image-video video {
+    width: 100%; /* Adjust to fit the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 500px; /* Set maximum width */
+    max-height: 400px; /* Set maximum height */
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#home-page img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#home-page .text-container h4 {
+    display: inline-block;
+    border-right: .15em solid black; /* The cursor */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    20% { border-color: rgb(255, 255, 255); }
+}
+
+#home-page .text-container h4 {
+    color: yellow; /* Text color */
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Monospace font for typewriter effect */
+    font-size: 40px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: blink-caret .75s step-end infinite;
+}
+
+.text-container {
+    font-family: Arial, sans-serif;
+    color: #000; /* Change text color to black */
+}
+
+.typing {
+    display: inline;
+    color: yellow; /* Change text color to yellow */
+    font-size: 0.8em; /* Reduce size of the caret */
+}
+
+#incline-text {
+    justify-content: center;
+}
+
+
+
+/* Styling for the button */
+#readme {
+    background-color: #f7ef05; /* Black background */
+    color: #000000; /* White text */
+    border: none; /* No border */
+    border-radius: 30px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect for the button */
+#readme:hover {
+    background-color: #797955; /* Darker gray background on hover */
+border: 2px solid  #f7ef05;/* Slightly enlarge the button */
+}
+
+/* Active effect for the button */
+#readme:active {
+    background-color: #444242; /* Even lighter gray background when clicked */
+    transform: scale(1); /* Reset scale */
+}
+
+.readmetext{
+    display: none;
+}
+
+
+
+
+/* Our services code  */
+.services-head{
+    font-size: 2.40em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Example font family */
+    color: white;
+}
+
+#ourservices {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 15%;
+    height: auto;
+}
+
+.services-head {
+    
+    font-size: 2em;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    background: linear-gradient(to bottom, #000000, #f3f3f3);
+    color: white;
+    padding: 20px;
+    width: 30%;
+    min-height: 300px; /* Set a minimum height */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(137, 123, 123, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
+}
+
+.service-box h3 {
+    margin-top: 15%;
+    background: none;
+    color: #f7ef05;
+
+}
+
+#ourservice-p{
+    background: none;
+    justify-content: space-between;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .service-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* projects section in this  */
+#projects-sec {
+    text-align: center;
+    margin: 20px;
+    width: auto;
+}
+
+.hp-head {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10%;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Example font family */
+    color: white;
+}
+
+.slider-container {
+    position: relative;
+    width: 960px; /* Adjust to fit three videos at a time plus padding */
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.video-box {
+    flex: 0 0 300px; /* Increased video width */
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(251, 251, 251, 0.2); /* Box shadow added */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Ensure the content stays inside rounded corners */
+    height: 350px;
+}
+
+video {
+    display: block;
+
+    width: 300px;
+    height: 225px; /* Adjust height to maintain aspect ratio */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Ensure arrows are on top of videos */
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+#des-video {
+    color: white;
+    font-size: 24px;
+}
+
+
+/* Styling for the 'Our Experience' Section */
+#sec-experience {
+    background-color: #000000;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.exp-head {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.exp-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6%;
+}
+
+.exp-container {
+    flex: 1;
+    text-align: left;
+}
+
+.exp-container img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    animation: float-shadow 3s ease-in-out infinite; /* Up-and-down with shadow animation */
+}
+
+/* Up-and-Down with Shadow Animation */
+@keyframes float-shadow {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0px 4px 15px rgba(75, 71, 71, 0.5);
+    }
+    50% {
+        transform: translateY(-10px); /* Move image up */
+        box-shadow: 0px 20px 30px rgba(75, 71, 71, 0.7); /* Increase shadow */
+    }
+}
+
+
+.bar-ex {
+    flex: 1;
+    padding-left: 30px;
+}
+
+/* Skill Bar Styling */
+.skill-bar {
+    margin: 25px 0; /* Increased margin for spacing between bars */
+    position: relative;
+}
+
+.skill-bar-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-bar-title span {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.skill-bar-fill {
+    background-color: #ffcc00;
+    height: 5px;
+    width: 0;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+/* Set individual skill levels */
+.skill-html .skill-bar-fill {
+    width: 90%;
+}
+
+.skill-css .skill-bar-fill {
+    width: 80%;
+}
+
+.skill-js .skill-bar-fill {
+    width: 75%;
+}
+
+.skill-php .skill-bar-fill {
+    width: 70%;
+}
+
+.skill-mysql .skill-bar-fill {
+    width: 85%;
+}
+
+#about-sec {
+    background-color: #000000; /* Dark background for a professional look */
+    padding: 50px 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 20px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: 430px;
+    margin-right: 10%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2); /* Initial white shadow */
+    animation: shadow-pulse 3s infinite; /* Apply the shadow animation */
+}
+
+/* Animated White Shadow Effect */
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+/* contact us styling */
+#contact-sec {
+    background-color: #000000; /* Dark background for a professional look */
+    padding: 50px 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-text {
+    flex: 1;
+    max-width: 500px;
+    padding-right: 20px;
+    color: #ffffff;
+}
+
+.contact-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align: center; /* Center the heading */
+}
+
+.contact-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center; /* Center the paragraph */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    justify-content: center; /* Center icons horizontally */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img {
+    width: 40px; /* Size of the icons */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3); /* Brighter shadow on hover */
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
+    padding-left: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e0b800; /* Darker yellow on hover */
+}
+
+
